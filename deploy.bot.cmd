@@ -70,7 +70,7 @@ echo setx path donet tools
 
 echo installing entity framework packages
 dotnet tool install --global dotnet-ef
-setx PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
+set PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
 
 :: 1. Restore nuget packages
 echo step 1st dotnet restore package
