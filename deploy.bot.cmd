@@ -82,11 +82,13 @@ IF !ERRORLEVEL! NEQ 0 goto error
 
 echo upgrade npm Version
 npm install -g npm@8.1.0
+pause
 goto node
 
 :node
 echo upgrade node version
 npm install -g node@16.13.0
+pause
 goto continue
 
 :continue
