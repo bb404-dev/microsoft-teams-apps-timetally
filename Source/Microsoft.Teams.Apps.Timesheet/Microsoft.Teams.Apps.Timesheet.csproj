@@ -6,8 +6,7 @@
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
     <SpaRoot>ClientApp\</SpaRoot>
-    <gitcommand1>git config --global url."https://github.com/".insteadOf git@github.com:</gitcommand1>
-    <gitcommand2>git config --global url."https://".insteadOf git://</gitcommand2>
+    <gitcommand2>git config --global url."git+ssh://".insteadOf git://</gitcommand2>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -93,8 +92,6 @@
 
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Message Importance="high" Text="Changing git@ url..." />
-    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="$(gitcommand1)"/>
     <Message Importance="high" Text="Changing git:// url to https..." />
     <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="$(gitcommand2)"/>
     <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />

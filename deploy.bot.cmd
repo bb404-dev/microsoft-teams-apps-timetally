@@ -73,8 +73,7 @@ dotnet tool install --global dotnet-ef
 set PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
 
 echo forcing git to use https..
-git config --global url."https://github.com/".insteadOf git@github.com:
-git config --global url."https://".insteadOf git://
+git config --global url."git+ssh://".insteadOf git://
 
 :: 1. Restore nuget packages
 echo step 1st dotnet restore package
