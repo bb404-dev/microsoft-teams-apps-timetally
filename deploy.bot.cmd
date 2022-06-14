@@ -81,11 +81,11 @@ IF 1==1  (
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
-IF 1==1 (
-  echo upgrade node version
-  call npm install -g node@16.13.0
-  IF !ERRORLEVEL! NEQ 0 goto error
-)
+::IF 1==1 (
+ :: echo upgrade node version
+  ::call npm install -g node@16.13.0
+  ::IF !ERRORLEVEL! NEQ 0 goto error
+::)
 
 :: 1. Restore nuget packages
 echo step 1st dotnet restore package
