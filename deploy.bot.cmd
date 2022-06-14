@@ -82,9 +82,14 @@ IF !ERRORLEVEL! NEQ 0 goto error
 
 echo upgrade npm Version
 npm install -g npm@8.1.0
+goto node
 
+:node
 echo upgrade node version
 npm install -g node@16.13.0
+goto continue
+
+:continue
 
 :: 2. Build and publish
 echo step 2nd build and publish
