@@ -75,5 +75,12 @@
     "tslint-microsoft-contrib": "^6.2.0",
     "typescript": "^3.9.3",
     "prettier": "2.1.2"
+  },
+  "engines": {
+
+    "node": "16.15.1",
+
+    "npm": "8.11.0"
+
   }
 }
