@@ -72,6 +72,10 @@ echo installing entity framework packages
 dotnet tool install --global dotnet-ef
 set PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
 
+echo forcing git to use https..
+git config --global url."https://github.com/".insteadOf git@github.com:
+git config --global url."https://".insteadOf git://
+
 :: 1. Restore nuget packages
 echo step 1st dotnet restore package
 call :ExecuteCmd dotnet restore "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.sln"
