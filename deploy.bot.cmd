@@ -75,13 +75,13 @@ set PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
 echo forcing git to use https..
 git config --global url."git+ssh://".insteadOf git://
 
-IF DEFINED npm (
+IF npm --version != 8.1.0  (
   echo upgrade npm Version
   call npm install -g npm@8.1.0
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
-IF DEFINED node (
+IF node --version != 16.13.0 (
   echo upgrade node version
   call npm install -g node@16.13.0
   IF !ERRORLEVEL! NEQ 0 goto error
