@@ -91,6 +91,8 @@
 
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Message Importance="high" Text="Changing git url..." />
+    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="git config --global url.https://github.com/.insteadOf git://github.com/" />
     <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
     <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install --no-audit" />
     <Message Importance="high" Text="Building the client app using 'npm'. This may take several minutes..." />
