@@ -75,16 +75,17 @@ set PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
 echo forcing git to use https..
 git config --global url."git+ssh://".insteadOf git://
 
-echo upgrade npm Version
-npm install -g npm@8.1.0
-goto node
+IF DEFINED npm (
+  echo upgrade npm Version
+  call npm install -g npm@8.1.0
+  IF !ERRORLEVEL! NEQ 0 goto error
+)
 
-:node
-echo upgrade node version
-npm install -g node@16.13.0
-goto continue
-
-:continue
+IF DEFINED node (
+  echo upgrade node version
+  call npm install -g node@16.13.0
+  IF !ERRORLEVEL! NEQ 0 goto error
+)
 
 :: 1. Restore nuget packages
 echo step 1st dotnet restore package
