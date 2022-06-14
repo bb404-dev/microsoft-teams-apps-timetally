@@ -75,23 +75,21 @@ set PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
 echo forcing git to use https..
 git config --global url."git+ssh://".insteadOf git://
 
-:: 1. Restore nuget packages
-echo step 1st dotnet restore package
-call :ExecuteCmd dotnet restore "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.sln"
-IF !ERRORLEVEL! NEQ 0 goto error
-
 echo upgrade npm Version
 npm install -g npm@8.1.0
-pause
 goto node
 
 :node
 echo upgrade node version
 npm install -g node@16.13.0
-pause
 goto continue
 
 :continue
+
+:: 1. Restore nuget packages
+echo step 1st dotnet restore package
+call :ExecuteCmd dotnet restore "%DEPLOYMENT_SOURCE%\Source\Microsoft.Teams.Apps.Timesheet.sln"
+IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 2. Build and publish
 echo step 2nd build and publish
