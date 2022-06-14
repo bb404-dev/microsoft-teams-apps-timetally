@@ -98,9 +98,10 @@
     <!--
     <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install -g npm@8.1.0" />
     <Message Importance="high" Text="upgrading node version'. This may take several minutes..." />
-    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install -g node@16.13.0" /> -->
+    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install -g node@16.13.0" /> 
     <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install --no-audit" />
+    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install" /> -->
+
     <Message Importance="high" Text="Building the client app using 'npm'. This may take several minutes..." />
     <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm run build" />
     <Message Importance="high" Text="Finished building the client app" />
