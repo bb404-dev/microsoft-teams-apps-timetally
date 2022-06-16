@@ -72,14 +72,17 @@ echo installing entity framework packages
 dotnet tool install --global dotnet-ef
 set PATH "%PATH%;C:\local\UserProfile\.dotnet\tools"
 
-echo forcing git to use https..
-git config --global url."git+ssh://".insteadOf git://
+::echo forcing git to use https..
+::git config --global url."git+ssh://".insteadOf git://
 
-IF 1==1  (
-  echo upgrade npm Version
-  call npm install -g npm@8.1.0
-  IF !ERRORLEVEL! NEQ 0 goto error
-)
+echo forcing git to use https..
+git config --global url."https://".insteadOf git://
+
+::IF 1==1  (
+  ::echo upgrade npm Version
+  ::call npm install -g npm@8.1.0
+  ::IF !ERRORLEVEL! NEQ 0 goto error
+::)
 
 ::IF 1==1 (
  :: echo upgrade node version
