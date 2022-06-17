@@ -95,8 +95,8 @@
     <Message Importance="high" Text="Changing git:// url to https..." />
     <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="$(gitcommand2)"/>
    
-    <!--<Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install" /> -->
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm install --legacy-peer-deps" />
 
     <Message Importance="high" Text="Building the client app using 'npm'. This may take several minutes..." />
     <Exec Condition=" '$(KuduDeployment)' == '' " WorkingDirectory="$(SpaRoot)" Command="npm run build" />
