@@ -88,13 +88,13 @@
     },
 "timeZone": {
       "type": "String",
-"defaultValue": "Indian Standard Time",
+"defaultValue": "Australian Eastern Standard Time",
       "metadata": {
         "description": "Timezone on which reminder notifications will be sent."
       }
     },
     "appDisplayName": {
-      "defaultValue": "Time Tally",
+      "defaultValue": "Time My Shift",
       "minLength": 1,
       "type": "String",
       "metadata": {
@@ -102,7 +102,7 @@
       }
     },
     "appDescription": {
-      "defaultValue": "Time Tally app can be used by users to ease timesheet filling. Multiple tasks can be improved so that it is super easy for employees to fill timesheet using mobile device and managers do not have to check with employees on timesheet entry. Reminder notifications will also be sent to ensure timesheet compliance.",
+      "defaultValue": "Time My Shift app can be used by users to ease timesheet filling. Multiple tasks can be improved so that it is super easy for employees to fill timesheet using mobile device and managers do not have to check with employees on timesheet entry. Reminder notifications will also be sent to ensure timesheet compliance.",
       "minLength": 1,
       "type": "String",
       "metadata": {
@@ -110,7 +110,7 @@
       }
     },
     "appIconUrl": {
-      "defaultValue": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-apps-timetally/main/Manifest/color.png",
+      "defaultValue": "https://raw.githubusercontent.com/AsharmaS4/microsoft-teams-apps-timetally/feature/fix-setx-error-20221206/Manifest/color.png",
       "minLength": 1,
       "type": "String",
       "metadata": {
@@ -130,7 +130,7 @@
       }
     },
     "planSize": {
-      "defaultValue": "1",
+      "defaultValue": "2",
       "allowedValues": [
         "1",
         "2",
@@ -214,7 +214,7 @@
       }
     },
     "gitRepoUrl": {
-      "defaultValue": "https://github.com/OfficeDev/microsoft-teams-apps-timetally.git",
+      "defaultValue": "https://github.com/AsharmaS4/microsoft-teams-apps-timetally.git",
       "type": "String",
       "metadata": {
         "description": "The URL to the GitHub repository to deploy."
